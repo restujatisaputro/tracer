@@ -4,12 +4,12 @@
 /* @var $content string */
 
 use app\widgets\Alert;
+use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-use yii\helpers\Url;
 
 $busi = "/tracer/web/";
 $base = Url::base('')."/site/index/";
@@ -45,14 +45,14 @@ if($parts == '/site/index'||$parts == '/site/'){
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 
-     <link rel="stylesheet" href="<?php echo $busi ?>tempmo/css/bootstrap.min.css">
-     <link rel="stylesheet" href="<?php echo $busi ?>tempmo/css/font-awesome.min.css">
-     <link rel="stylesheet" href="<?php echo $busi ?>tempmo/css/aos.css">
-     <link rel="stylesheet" href="<?php echo $busi ?>tempmo/css/owl.carousel.min.css">
-     <link rel="stylesheet" href="<?php echo $busi ?>tempmo/css/owl.theme.default.min.css">
+     <link rel="stylesheet" href="<?= Url::to(['/tempmo/css/bootstrap.min.css']); ?>">
+     <link rel="stylesheet" href="<?= Url::to(['/tempmo/css/font-awesome.min.css']); ?>">
+     <link rel="stylesheet" href="<?= Url::to(['/tempmo/css/aos.css']); ?>">
+     <link rel="stylesheet" href="<?= Url::to(['/tempmo/css/owl.carousel.min.css']); ?>">
+     <link rel="stylesheet" href="<?= Url::to(['/tempmo/css/owl.theme.default.min.css']); ?>">
 
      <!-- MAIN CSS -->
-     <link rel="stylesheet" href="<?php echo $busi ?>tempmo/css/templatemo-digital-trend.css">
+     <link rel="stylesheet" href="<?= Url::to(['/tempmo/css/templatemo-digital-trend.css']); ?>">
      <style type="text/css">
          .icon {
         
@@ -72,7 +72,7 @@ if($parts == '/site/index'||$parts == '/site/'){
 
 <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <img src="<?php echo $busi ?>images/logo.png" class="icon">
+            <img src="<?= Url::to(['/images/logo.png']); ?>" class="icon">
             <a class="navbar-brand" href="<?= Url::base(''); ?>/site/index">
 
                  <?= Yii::$app->name ?>
@@ -166,12 +166,12 @@ if($parts == '/site/index'||$parts == '/site/'){
 
 
      <!-- SCRIPTS -->
-     <script src="<?php echo $busi ?>tempmo/js/jquery.min.js"></script>
-     <script src="<?php echo $busi ?>tempmo/js/bootstrap.min.js"></script>
-     <script src="<?php echo $busi ?>tempmo/js/aos.js"></script>
-     <script src="<?php echo $busi ?>tempmo/js/owl.carousel.min.js"></script>
-     <script src="<?php echo $busi ?>tempmo/js/smoothscroll.js"></script>
-     <script src="<?php echo $busi ?>tempmo/js/custom.js"></script>
+     <script src="<?= Url::to(['/tempmo/js/jquery.min.js']); ?>"></script>
+     <script src="<?= Url::to(['/tempmo/js/bootstrap.min.js']); ?>"></script>
+     <script src="<?= Url::to(['/tempmo/js/aos.js']); ?>"></script>
+     <script src="<?= Url::to(['/tempmo/js/owl.carousel.min.js']); ?>"></script>
+     <script src="<?= Url::to(['/tempmo/js/smoothscroll.js']); ?>"></script>
+     <script src="<?= Url::to(['/tempmo/js/custom.js']); ?>"></script>
 
 
 
