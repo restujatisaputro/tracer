@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
+use app\modules\ts\models\Ts;
 use app\models\LoginForm;
 use app\models\SignupForm;
 use app\models\ContactForm;
@@ -89,6 +90,27 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+
+            $model = Ts::findOne(Yii::$app->user->identity->nim);
+            // print_r($model);
+            // die;
+
+            if (!isset($model)) {
+                $ts = new Ts();
+                $ts->nim = Yii::$app->user->identity->nim;
+
+                if ($ts->save()) {
+                    return $this->redirect(Yii::$app->user->getReturnUrl(Url::base(true)."/ts/profil/view?id=". Yii::$app->user->identity->nim));
+                        //         print_r("roy oke");
+                        // die;
+                } else {
+                    // print_r($ts->getErrors());
+                    // print_r("roy ga oke");
+                    //     die;
+                }
+                
+            }
+
             return $this->redirect(Yii::$app->user->getReturnUrl(Url::base(true)."/ts/profil/view?id=". Yii::$app->user->identity->nim));
 
         }

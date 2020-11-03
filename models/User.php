@@ -65,6 +65,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             ['email', 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => self::className()],
 
+            ['nim', 'number', 'min'=>999999999, 'max'=>9999999999],
+
             ['password_hash', 'required', 'when' => function ($model) {
                 return $this->isNewRecord;
             }, 'whenClient' => "function (attribute, value) {
