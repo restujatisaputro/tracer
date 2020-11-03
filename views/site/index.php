@@ -1,8 +1,9 @@
 
-<!-- HERO -->
 <?php 
+
 use yii\helpers\Url;
-$busi = "/tracer/web/";
+
+$this->title = 'Tracer Study Politeknik Negeri Jakarta';
 ?>
      <section class="hero hero-bg d-flex justify-content-center align-items-center">
                <div class="container">
@@ -13,7 +14,7 @@ $busi = "/tracer/web/";
 
                                    <h1 class="text-white" data-aos="fade-up">Tracer Study Politeknik Negeri Jakarta</h1>
 
-                                   <a href="<?= Url::base(''); ?>/site/login" class="custom-btn btn-bg btn mt-3" data-aos="fade-up" data-aos-delay="100">Isi Formulir Tracer</a>
+                                   <a href="<?= Url::base(['/site/login']); ?>" class="custom-btn btn-bg btn mt-3" data-aos="fade-up" data-aos-delay="100">Isi Formulir Tracer</a>
 
                                    <strong class="d-block py-3 pl-5 text-white" data-aos="fade-up" data-aos-delay="200"><i class="fa fa-phone mr-2"></i> +6221 7860036</strong>
                               </div>
@@ -21,8 +22,7 @@ $busi = "/tracer/web/";
 
                         <div class="col-lg-6 col-12">
                           <div class="hero-image" data-aos="fade-up" data-aos-delay="300">
-
-                            <img src="<?php echo $busi ?>tempmo/images/working-girl.png" class="img-fluid" alt="working girl">
+                            <img src="<?= Url::to(['/tempmo/images/working-girl.png']) ?>" class="img-fluid" alt="working girl">
                           </div>
                         </div>
 
@@ -50,7 +50,7 @@ $busi = "/tracer/web/";
 
                          <div class="about-image" data-aos="fade-up" data-aos-delay="200">
 
-                          <img src="<?php echo $busi ?>tempmo/images/office.png" class="img-fluid" alt="office">
+                          <img src="<?= Url::to(['/tempmo/images/office.png']) ?>" class="img-fluid" alt="office">
                         </div>
                     </div>
 
@@ -77,14 +77,3 @@ $busi = "/tracer/web/";
                </div>
           </div>
      </section>
-
-
-
-
-
-<?php
-
-/* @var $this yii\web\View */
-
-$this->title = 'Tracer Study Politeknik Negeri Jakarta';
-?>
